@@ -24,11 +24,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public User register(String username, String password, String countryName) throws Exception{
 
+        User user = new User();
+
         if(countryName.equalsIgnoreCase("IND") || countryName.equalsIgnoreCase("USA")
                 ||countryName.equalsIgnoreCase("JPN") || countryName.equalsIgnoreCase("CHI")
                 ||countryName.equalsIgnoreCase("AUS"))
         {
-            User user = new User();
+
 
             user.setPassword(username);
             user.setPassword(password);
@@ -67,10 +69,11 @@ public class UserServiceImpl implements UserService {
             String code = country.getCode()+"."+userRepository3.save(user).getId();
             user.setOriginalIp(code);
             userRepository3.save(user);
-            return user;
+
         }else{
             throw new Exception("Country not found");
         }
+        return user;
 
     }
 
