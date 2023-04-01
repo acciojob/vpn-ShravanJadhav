@@ -56,7 +56,7 @@ public class ConnectionServiceImpl implements ConnectionService {
                 connection.setUser(user);
                 connection.setServiceProvider(serviceProvider);
 
-                String cc = country.getCodes();
+                String cc = country.getCode();
                 int givenId = serviceProvider.getId();
                 String mast = cc+"."+givenId+"."+userId;
 
@@ -104,7 +104,7 @@ public class ConnectionServiceImpl implements ConnectionService {
              String maskedIp = receiver.getMaskedIp();
              String countryCode = maskedIp.substring(0,3);
 
-             if(countryCode.equals(sender.getCountry().getCodes())){
+             if(countryCode.equals(sender.getCountry().getCode())){
                  return sender;
              }else{
                  String countryName="";

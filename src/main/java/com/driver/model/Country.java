@@ -9,7 +9,7 @@ public class Country {
     private int id;
 
     private CountryName countryName;
-    private String codes;
+    private String code;
 
     @ManyToOne
     @JoinColumn
@@ -22,21 +22,21 @@ public class Country {
     public Country() {
     }
 
-    public Country(int id, CountryName countryName, String codes) {
+    public Country(int id, CountryName countryName, String code) {
         this.id = id;
         this.countryName = countryName;
-        this.codes = codes;
+        this.code = code;
     }
 
-    public Country(CountryName countryName, String codes) {
+    public Country(CountryName countryName, String code) {
         this.countryName = countryName;
-        this.codes = codes;
+        this.code = code;
     }
 
-    public Country(int id, CountryName countryName, String codes, ServiceProvider serviceProvider, User user) {
+    public Country(int id, CountryName countryName, String code, ServiceProvider serviceProvider, User user) {
         this.id = id;
         this.countryName = countryName;
-        this.codes = codes;
+        this.code = code;
         this.serviceProvider = serviceProvider;
         this.user = user;
     }
@@ -56,12 +56,12 @@ public class Country {
         this.countryName = countryName;
     }
 
-    public String getCodes() {
-        return codes;
+    public String getCode() {
+        return code;
     }
 
-    public void setCodes(String codes) {
-        this.codes = codes;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public ServiceProvider getServiceProvider() {
