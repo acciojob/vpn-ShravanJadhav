@@ -17,10 +17,10 @@ public class User {
 
     @ManyToMany
     @JoinColumn
-    List<ServiceProvider> serviceProviderList;
+    List<ServiceProvider> serviceProviderList = new ArrayList<>();
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    List<Connection> connectionList;
+    List<Connection> connectionList = new ArrayList<>();
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     Country originalCountry;

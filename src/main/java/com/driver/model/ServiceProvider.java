@@ -16,13 +16,13 @@ public class ServiceProvider {
     Admin admin;
 
     @OneToMany(mappedBy = "serviceProvider", cascade = CascadeType.ALL)
-    List<Connection> connectionList;
+    List<Connection> connectionList = new ArrayList<>();
 
     @ManyToMany(mappedBy = "serviceProviderList" , cascade = CascadeType.ALL)
-    List<User>users;
+    List<User>users = new ArrayList<>();
 
     @OneToMany(mappedBy = "serviceProvider", cascade = CascadeType.ALL)
-    List<Country>countryList;
+    List<Country>countryList = new ArrayList<>();
 
     public ServiceProvider() {
     }
